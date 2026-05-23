@@ -59,6 +59,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Dileep Construction — Building Landmarks Since 1998" },
       { name: "description", content: "Premium construction company delivering residential, commercial and infrastructure projects across India." },
       { name: "author", content: "Dileep Construction" },
+      { property: "og:title", content: "Dileep Construction — Building Landmarks Since 1998" },
+      { name: "twitter:title", content: "Dileep Construction — Building Landmarks Since 1998" },
+      { property: "og:description", content: "Premium construction company delivering residential, commercial and infrastructure projects across India." },
+      { name: "twitter:description", content: "Premium construction company delivering residential, commercial and infrastructure projects across India." },
+      { name: "twitter:card", content: "summary" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
