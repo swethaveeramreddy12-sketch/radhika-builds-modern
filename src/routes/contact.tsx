@@ -6,9 +6,9 @@ import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Radhika Constructions" },
-      { name: "description", content: "Get in touch with Radhika Constructions to start your next residential, commercial or infrastructure project." },
-      { property: "og:title", content: "Contact Radhika Constructions" },
+      { title: "Contact — Dileep Construction" },
+      { name: "description", content: "Get in touch with Dileep Construction to start your next residential, commercial or infrastructure project." },
+      { property: "og:title", content: "Contact Dileep Construction" },
       { property: "og:description", content: "Start a conversation about your next project." },
     ],
   }),
@@ -38,8 +38,8 @@ function Contact() {
           <div className="lg:col-span-2 space-y-8">
             {[
               { icon: MapPin, label: "Head Office", value: "1204 Skyline Tower, Banjara Hills, Hyderabad 500034" },
-              { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-              { icon: Mail, label: "Email", value: "hello@radhikaconstructions.com" },
+              { icon: Phone, label: "Phone", value: "+91 96423 33337" },
+              { icon: Mail, label: "Email", value: "dillu3051@gmail.com" },
             ].map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex gap-4">
                 <div className="w-12 h-12 rounded-md bg-navy text-white flex items-center justify-center shrink-0">

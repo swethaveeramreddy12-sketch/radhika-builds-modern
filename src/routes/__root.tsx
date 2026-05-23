@@ -56,9 +56,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Radhika Constructions — Building Landmarks Since 1998" },
+      { title: "Dileep Construction — Building Landmarks Since 1998" },
       { name: "description", content: "Premium construction company delivering residential, commercial and infrastructure projects across India." },
-      { name: "author", content: "Radhika Constructions" },
+      { name: "author", content: "Dileep Construction" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
