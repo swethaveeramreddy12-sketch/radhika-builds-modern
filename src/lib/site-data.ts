@@ -28,7 +28,7 @@ export const projects = [
 
 export const testimonials = [
   {
-    quote: "Radhika delivered our 32-storey tower three months ahead of schedule. Their attention to finish quality is genuinely best-in-class.",
+    quote: "Dileep delivered our 32-storey tower three months ahead of schedule. Their attention to finish quality is genuinely best-in-class.",
     name: "Arjun Mehta",
     role: "MD, Meridian Group",
   },

@@ -8,9 +8,9 @@ import { services, projects, testimonials, stats } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Radhika Constructions — Building Landmarks Since 1998" },
+      { title: "Dileep Construction — Building Landmarks Since 1998" },
       { name: "description", content: "Premium construction company delivering residential, commercial and infrastructure projects with precision and craftsmanship." },
-      { property: "og:title", content: "Radhika Constructions — Building Landmarks Since 1998" },
+      { property: "og:title", content: "Dileep Construction — Building Landmarks Since 1998" },
       { property: "og:description", content: "Premium construction company delivering landmark projects across India." },
     ],
   }),
@@ -31,7 +31,7 @@ function Home() {
             Building tomorrow's<br />landmarks today.
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/80 leading-relaxed animate-fade-up delay-200">
-            Radhika Constructions delivers premium residential, commercial and infrastructure projects with the precision of a craftsman and the scale of an industry leader.
+            Dileep Construction delivers premium residential, commercial and infrastructure projects with the precision of a craftsman and the scale of an industry leader.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up delay-300">
             <Link to="/projects" className="inline-flex items-center gap-2 px-7 py-4 bg-[var(--gold)] text-navy-deep font-semibold rounded-md hover:brightness-110 transition-smooth">
@@ -69,12 +69,12 @@ function Home() {
             </div>
           </div>
           <div>
-            <p className="text-navy text-xs uppercase tracking-[0.3em] mb-4">About Radhika</p>
+            <p className="text-navy text-xs uppercase tracking-[0.3em] mb-4">About Dileep</p>
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground mb-6">
               Three decades of building with conviction.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Founded in 1998, Radhika Constructions has grown from a family-run civil practice into one of India's most trusted construction partners. We believe great buildings are the product of patience, technical mastery and an obsession with the details no one else notices.
+              Founded in 1998, Dileep Construction has grown from a family-run civil practice into one of India's most trusted construction partners. We believe great buildings are the product of patience, technical mastery and an obsession with the details no one else notices.
             </p>
             <ul className="space-y-3 mb-8">
               {[

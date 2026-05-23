@@ -36,7 +36,7 @@ export function Navbar() {
           </div>
           <div className="leading-tight">
             <div className={`font-display text-lg font-semibold ${scrolled ? "text-foreground" : "text-white"}`}>
-              Radhika
+              Dileep
             </div>
             <div className={`text-[10px] uppercase tracking-[0.2em] ${scrolled ? "text-muted-foreground" : "text-white/70"}`}>
               Constructions
