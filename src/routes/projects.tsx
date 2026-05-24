@@ -8,9 +8,9 @@ const categories = ["All", "Residential", "Commercial", "Retail", "Infrastructur
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Dileep Construction" },
+      { title: "Projects — Radhika Constructions" },
       { name: "description", content: "A selected portfolio of residential, commercial, retail, infrastructure and industrial projects delivered across India." },
-      { property: "og:title", content: "Projects — Dileep Construction" },
+      { property: "og:title", content: "Projects — Radhika Constructions" },
       { property: "og:description", content: "Selected portfolio of landmark projects." },
     ],
   }),

@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, FormEvent } from "react";
 import { Layout, PageHero } from "@/components/Layout";
-import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle2, MessageCircle } from "lucide-react";
+
+const COMPANY_EMAIL = "radhikaconstructions@gmail.com";
+const COMPANY_WHATSAPP = "919642333337";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Dileep Construction" },
-      { name: "description", content: "Get in touch with Dileep Construction to start your next residential, commercial or infrastructure project." },
-      { property: "og:title", content: "Contact Dileep Construction" },
+      { title: "Contact — Radhika Constructions" },
+      { name: "description", content: "Get in touch with Radhika Constructions to start your next residential, commercial or infrastructure project." },
+      { property: "og:title", content: "Contact Radhika Constructions" },
       { property: "og:description", content: "Start a conversation about your next project." },
     ],
   }),
@@ -20,9 +23,31 @@ function Contact() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const fd = new FormData(form);
+    const name = String(fd.get("name") || "").trim();
+    const email = String(fd.get("email") || "").trim();
+    const phone = String(fd.get("phone") || "").trim();
+    const type = String(fd.get("type") || "").trim();
+    const message = String(fd.get("message") || "").trim();
+
+    const subject = `New project enquiry from ${name}`;
+    const body =
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProject Type: ${type}\n\nDetails:\n${message}`;
+    window.location.href = `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setSubmitted(true);
-    (e.target as HTMLFormElement).reset();
-    setTimeout(() => setSubmitted(false), 5000);
+    form.reset();
+    setTimeout(() => setSubmitted(false), 6000);
+  };
+
+  const onWhatsApp = () => {
+    const form = document.querySelector("form") as HTMLFormElement | null;
+    const fd = form ? new FormData(form) : new FormData();
+    const name = String(fd.get("name") || "").trim();
+    const message = String(fd.get("message") || "").trim();
+    const text = `Hi Radhika Constructions, I'm ${name || "(name)"}.\n\n${message || "I'd like to discuss a project."}`;
+    window.open(`https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (
@@ -39,7 +64,7 @@ function Contact() {
             {[
               { icon: MapPin, label: "Head Office", value: "1204 Skyline Tower, Banjara Hills, Hyderabad 500034" },
               { icon: Phone, label: "Phone", value: "+91 96423 33337" },
-              { icon: Mail, label: "Email", value: "dillu3051@gmail.com" },
+              { icon: Mail, label: "Email", value: "radhikaconstructions@gmail.com" },
             ].map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex gap-4">
                 <div className="w-12 h-12 rounded-md bg-navy text-white flex items-center justify-center shrink-0">
@@ -78,17 +103,26 @@ function Contact() {
                 placeholder="Tell us about your project, location and timeline…"
               />
             </div>
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 px-7 py-4 bg-navy text-white rounded-md font-semibold hover:bg-navy-deep transition-smooth"
-            >
-              Send Message <Send className="w-4 h-4" />
-            </button>
+            <div className="flex flex-wrap gap-3">
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 px-7 py-4 bg-navy text-white rounded-md font-semibold hover:bg-navy-deep transition-smooth"
+              >
+                Send Message <Send className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={onWhatsApp}
+                className="inline-flex items-center gap-2 px-7 py-4 bg-[#25D366] text-white rounded-md font-semibold hover:brightness-110 transition-smooth"
+              >
+                WhatsApp <MessageCircle className="w-4 h-4" />
+              </button>
+            </div>
 
             {submitted && (
               <div className="flex items-center gap-2 text-sm text-navy bg-secondary p-4 rounded-md animate-fade-in">
                 <CheckCircle2 className="w-5 h-5 text-[var(--gold)]" />
-                Thank you — we'll be in touch within 24 hours.
+                Your email app just opened with the message — hit send to deliver it to us.
               </div>
             )}
           </form>
