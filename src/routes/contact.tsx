@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, FormEvent } from "react";
 import { Layout, PageHero } from "@/components/Layout";
-import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle2, MessageCircle } from "lucide-react";
+
+const COMPANY_EMAIL = "radhikaconstructions@gmail.com";
+const COMPANY_WHATSAPP = "919642333337";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -20,9 +23,31 @@ function Contact() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const fd = new FormData(form);
+    const name = String(fd.get("name") || "").trim();
+    const email = String(fd.get("email") || "").trim();
+    const phone = String(fd.get("phone") || "").trim();
+    const type = String(fd.get("type") || "").trim();
+    const message = String(fd.get("message") || "").trim();
+
+    const subject = `New project enquiry from ${name}`;
+    const body =
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProject Type: ${type}\n\nDetails:\n${message}`;
+    window.location.href = `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setSubmitted(true);
-    (e.target as HTMLFormElement).reset();
-    setTimeout(() => setSubmitted(false), 5000);
+    form.reset();
+    setTimeout(() => setSubmitted(false), 6000);
+  };
+
+  const onWhatsApp = () => {
+    const form = document.querySelector("form") as HTMLFormElement | null;
+    const fd = form ? new FormData(form) : new FormData();
+    const name = String(fd.get("name") || "").trim();
+    const message = String(fd.get("message") || "").trim();
+    const text = `Hi Radhika Constructions, I'm ${name || "(name)"}.\n\n${message || "I'd like to discuss a project."}`;
+    window.open(`https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (
