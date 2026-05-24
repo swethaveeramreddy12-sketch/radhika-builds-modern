@@ -6,9 +6,9 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Dileep Construction" },
+      { title: "Services — Radhika Constructions" },
       { name: "description", content: "Residential, commercial, infrastructure, industrial, interior fit-out and project management services." },
-      { property: "og:title", content: "Services — Dileep Construction" },
+      { property: "og:title", content: "Services — Radhika Constructions" },
       { property: "og:description", content: "A full-spectrum construction partner." },
     ],
   }),

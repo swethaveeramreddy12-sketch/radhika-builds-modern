@@ -7,9 +7,9 @@ import about from "@/assets/about.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Dileep Construction" },
-      { name: "description", content: "Three decades of disciplined construction craft. Meet the team and values behind Dileep Construction." },
-      { property: "og:title", content: "About Dileep Construction" },
+      { title: "About — Radhika Constructions" },
+      { name: "description", content: "Three decades of disciplined construction craft. Meet the team and values behind Radhika Constructions." },
+      { property: "og:title", content: "About Radhika Constructions" },
       { property: "og:description", content: "Three decades of disciplined construction craft." },
     ],
   }),
@@ -39,7 +39,7 @@ function About() {
             <h2 className="text-3xl md:text-4xl font-semibold mb-6">From a single site to skylines across India.</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Dileep Construction was founded by Mr. Suresh Dileep in Hyderabad with a small civil team and a single principle: build what you'd be proud to live in. Twenty-seven years later, that principle still drives every decision.
+                Radhika Constructions was founded by Mr. Suresh Radhika in Hyderabad with a small civil team and a single principle: build what you'd be proud to live in. Twenty-seven years later, that principle still drives every decision.
               </p>
               <p>
                 Today we operate across seven Indian cities with 600+ professionals across architecture, engineering, MEP and project management — delivering everything from boutique villas to 40-storey towers and national infrastructure.
