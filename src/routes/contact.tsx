@@ -103,17 +103,26 @@ function Contact() {
                 placeholder="Tell us about your project, location and timeline…"
               />
             </div>
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 px-7 py-4 bg-navy text-white rounded-md font-semibold hover:bg-navy-deep transition-smooth"
-            >
-              Send Message <Send className="w-4 h-4" />
-            </button>
+            <div className="flex flex-wrap gap-3">
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 px-7 py-4 bg-navy text-white rounded-md font-semibold hover:bg-navy-deep transition-smooth"
+              >
+                Send Message <Send className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={onWhatsApp}
+                className="inline-flex items-center gap-2 px-7 py-4 bg-[#25D366] text-white rounded-md font-semibold hover:brightness-110 transition-smooth"
+              >
+                WhatsApp <MessageCircle className="w-4 h-4" />
+              </button>
+            </div>
 
             {submitted && (
               <div className="flex items-center gap-2 text-sm text-navy bg-secondary p-4 rounded-md animate-fade-in">
                 <CheckCircle2 className="w-5 h-5 text-[var(--gold)]" />
-                Thank you — we'll be in touch within 24 hours.
+                Your email app just opened with the message — hit send to deliver it to us.
               </div>
             )}
           </form>
