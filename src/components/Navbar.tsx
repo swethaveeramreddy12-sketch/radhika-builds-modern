@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -25,20 +26,20 @@ export function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-smooth ${
         scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-white/10 backdrop-blur-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className={`p-2 rounded-md transition-smooth ${scrolled ? "bg-navy text-primary-foreground" : "bg-white/10 text-white backdrop-blur"}`}>
-            <Building2 className="w-5 h-5" />
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className={`rounded-md transition-smooth p-1 ${scrolled ? "bg-transparent" : "bg-white/90"}`}>
+            <img src={logo} alt="Radhika Constructions logo" className="h-12 w-12 object-contain" />
           </div>
           <div className="leading-tight">
             <div className={`font-display text-lg font-semibold ${scrolled ? "text-foreground" : "text-white"}`}>
               Radhika
             </div>
-            <div className={`text-[10px] uppercase tracking-[0.2em] ${scrolled ? "text-muted-foreground" : "text-white/70"}`}>
+            <div className={`text-[10px] uppercase tracking-[0.2em] ${scrolled ? "text-muted-foreground" : "text-white/80"}`}>
               Constructions
             </div>
           </div>
@@ -50,7 +51,7 @@ export function Navbar() {
               <Link
                 to={l.to}
                 className={`text-sm font-medium tracking-wide transition-smooth relative py-2 ${
-                  scrolled ? "text-foreground/80 hover:text-foreground" : "text-white/80 hover:text-white"
+                  scrolled ? "text-foreground/80 hover:text-foreground" : "text-white/90 hover:text-white"
                 }`}
                 activeProps={{
                   className: `text-sm font-medium tracking-wide py-2 relative ${scrolled ? "text-foreground" : "text-white"} after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-0.5 after:bg-[var(--gold)]`,

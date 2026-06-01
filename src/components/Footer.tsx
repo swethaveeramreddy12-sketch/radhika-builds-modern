@@ -1,14 +1,15 @@
 import { Link } from "@tanstack/react-router";
-import { Building2, Facebook, Instagram, Linkedin, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
     <footer className="gradient-navy text-white/80">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 mb-5">
-            <div className="p-2 rounded-md bg-white/10">
-              <Building2 className="w-5 h-5 text-white" />
+          <div className="flex items-center gap-3 mb-5">
+            <div className="p-1.5 rounded-md bg-white">
+              <img src={logo} alt="Radhika Constructions logo" className="h-12 w-12 object-contain" />
             </div>
             <div>
               <div className="font-display text-lg text-white font-semibold">Radhika</div>
@@ -55,9 +56,9 @@ export function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Get in Touch</h4>
           <ul className="space-y-4 text-sm">
-            <li className="flex gap-3"><MapPin className="w-4 h-4 mt-0.5 text-[var(--gold)] shrink-0" /> 1204 Skyline Tower, Banjara Hills, Hyderabad 500034</li>
-            <li className="flex gap-3"><Phone className="w-4 h-4 mt-0.5 text-[var(--gold)] shrink-0" /> +91 96423 33337</li>
-            <li className="flex gap-3"><Mail className="w-4 h-4 mt-0.5 text-[var(--gold)] shrink-0" /> radhikaconstructions@gmail.com</li>
+            <li className="flex gap-3"><MapPin className="w-4 h-4 mt-0.5 text-[var(--gold)] shrink-0" /><span>Nimmanapalli Circle, Madanapalle, Andhra Pradesh 517501</span></li>
+            <li className="flex gap-3"><Phone className="w-4 h-4 mt-0.5 text-[var(--gold)] shrink-0" /><span>+91 96423 33337</span></li>
+            <li className="flex gap-3"><Mail className="w-4 h-4 mt-0.5 text-[var(--gold)] shrink-0" /><span>radhikaconstructions@gmail.com</span></li>
           </ul>
         </div>
       </div>
