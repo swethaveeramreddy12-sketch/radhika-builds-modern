@@ -21,15 +21,21 @@ export const Route = createFileRoute("/contact")({
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
+  const buildPayload = (form: HTMLFormElement) => {
+    const fd = new FormData(form);
+    return {
+      name: String(fd.get("name") || "").trim(),
+      email: String(fd.get("email") || "").trim(),
+      phone: String(fd.get("phone") || "").trim(),
+      type: String(fd.get("type") || "").trim(),
+      message: String(fd.get("message") || "").trim(),
+    };
+  };
+
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const fd = new FormData(form);
-    const name = String(fd.get("name") || "").trim();
-    const email = String(fd.get("email") || "").trim();
-    const phone = String(fd.get("phone") || "").trim();
-    const type = String(fd.get("type") || "").trim();
-    const message = String(fd.get("message") || "").trim();
+    const form = e.currentTarget;
+    const { name, email, phone, type, message } = buildPayload(form);
 
     const subject = `New project enquiry from ${name}`;
     const body =
@@ -43,10 +49,16 @@ function Contact() {
 
   const onWhatsApp = () => {
     const form = document.querySelector("form") as HTMLFormElement | null;
-    const fd = form ? new FormData(form) : new FormData();
-    const name = String(fd.get("name") || "").trim();
-    const message = String(fd.get("message") || "").trim();
-    const text = `Hi Radhika Constructions, I'm ${name || "(name)"}.\n\n${message || "I'd like to discuss a project."}`;
+    if (!form) return;
+    const { name, email, phone, type, message } = buildPayload(form);
+    const text =
+      `Hi Radhika Constructions,\n\n` +
+      `I'd like to start a conversation about a project.\n\n` +
+      `Name: ${name || "-"}\n` +
+      `Email: ${email || "-"}\n` +
+      `Phone: ${phone || "-"}\n` +
+      `Project Type: ${type || "-"}\n\n` +
+      `Details:\n${message || "-"}`;
     window.open(`https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -62,7 +74,7 @@ function Contact() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2 space-y-8">
             {[
-              { icon: MapPin, label: "Head Office", value: "1204 Skyline Tower, Banjara Hills, Hyderabad 500034" },
+              { icon: MapPin, label: "Head Office", value: "Nimmanapalli Circle, Madanapalle, Andhra Pradesh 517501" },
               { icon: Phone, label: "Phone", value: "+91 96423 33337" },
               { icon: Mail, label: "Email", value: "radhikaconstructions@gmail.com" },
             ].map(({ icon: Icon, label, value }) => (
