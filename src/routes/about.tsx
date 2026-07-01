@@ -84,35 +84,6 @@ function DotPattern({ className }: { className?: string }) {
   );
 }
 
-function GoldArcAvatar({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="relative w-28 h-28 shrink-0">
-      <svg
-        className="absolute inset-0 w-full h-full -rotate-45"
-        viewBox="0 0 100 100"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="46"
-          fill="none"
-          stroke="var(--gold)"
-          strokeWidth="2"
-          strokeDasharray="72 217"
-          strokeLinecap="round"
-        />
-      </svg>
-      <img
-        src={src}
-        alt={alt}
-        width={112}
-        height={112}
-        loading="lazy"
-        className="w-28 h-28 rounded-full object-cover p-1"
-      />
-    </div>
-  );
-}
 
 function AboutHero() {
   return (
@@ -231,9 +202,8 @@ function About() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Divya Card */}
-            <div className="relative bg-card rounded-xl border border-border p-8 shadow-card flex flex-col sm:flex-row gap-6 items-start overflow-hidden">
+            <div className="relative bg-card rounded-xl border border-border p-8 shadow-card overflow-hidden">
               <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
-              <GoldArcAvatar src={leaderDivya} alt="Reddivary Divya" />
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-navy mb-1">
                   Reddivary Divya
@@ -258,9 +228,8 @@ function About() {
             </div>
 
             {/* Dileep Card */}
-            <div className="relative bg-card rounded-xl border border-border p-8 shadow-card flex flex-col sm:flex-row gap-6 items-start overflow-hidden">
+            <div className="relative bg-card rounded-xl border border-border p-8 shadow-card overflow-hidden">
               <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
-              <GoldArcAvatar src={leaderDileep} alt="Reddivary Dileep Kumar" />
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-navy mb-1">
                   Reddivary Dileep Kumar
