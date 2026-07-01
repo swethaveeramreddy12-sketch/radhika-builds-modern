@@ -82,6 +82,37 @@ function About() {
           </div>
         </div>
       </section>
+
+      <section className="py-24 bg-secondary">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="max-w-2xl mb-14">
+            <p className="text-navy text-xs uppercase tracking-[0.3em] mb-4">Our Leadership</p>
+            <h2 className="text-4xl md:text-5xl font-semibold">The people steering our vision.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="bg-card p-8 rounded-lg border border-border shadow-card flex flex-col sm:flex-row gap-6 items-start">
+              <img src="/src/assets/leader-divya.jpg" alt="Reddivary Divya" className="w-28 h-28 rounded-full object-cover shrink-0 border-2 border-navy/10" />
+              <div>
+                <h3 className="text-xl font-semibold">Reddivary Divya</h3>
+                <p className="text-navy text-sm font-medium mb-3">Managing Partner</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Divya co-founded Radhika Constructions alongside her family, bringing over two decades of strategic oversight and client stewardship. She leads business development, vendor partnerships and community engagement — ensuring every project aligns with the firm's long-term reputation for trust and excellence.
+                </p>
+              </div>
+            </div>
+            <div className="bg-card p-8 rounded-lg border border-border shadow-card flex flex-col sm:flex-row gap-6 items-start">
+              <img src="/src/assets/leader-dileep.jpg" alt="Reddivary Dileep Kumar" className="w-28 h-28 rounded-full object-cover shrink-0 border-2 border-navy/10" />
+              <div>
+                <h3 className="text-xl font-semibold">Reddivary Dileep Kumar</h3>
+                <p className="text-navy text-sm font-medium mb-3">Senior Engineer & CFO</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Dileep oversees technical engineering, cost control and financial planning across all verticals. With deep expertise in structural systems and project economics, he ensures Radhika Constructions delivers on scope, schedule and budget — without ever compromising on safety or quality standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
