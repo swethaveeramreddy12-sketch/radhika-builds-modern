@@ -93,7 +93,7 @@ function About() {
           </div>
           <div className="grid md:grid-cols-2 gap-10">
             <div className="bg-card p-8 rounded-lg border border-border shadow-card flex flex-col sm:flex-row gap-6 items-start">
-              <img src="/src/assets/leader-divya.jpg" alt="Reddivary Divya" className="w-28 h-28 rounded-full object-cover shrink-0 border-2 border-navy/10" />
+              <img src={leaderDivya} alt="Reddivary Divya" width={112} height={112} loading="lazy" className="w-28 h-28 rounded-full object-cover shrink-0 border-2 border-navy/10" />
               <div>
                 <h3 className="text-xl font-semibold">Reddivary Divya</h3>
                 <p className="text-navy text-sm font-medium mb-3">Managing Partner</p>
