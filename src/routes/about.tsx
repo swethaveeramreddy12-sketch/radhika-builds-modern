@@ -3,6 +3,8 @@ import { Layout, PageHero } from "@/components/Layout";
 import { stats } from "@/lib/site-data";
 import { Compass, ShieldCheck, Sparkles, Users } from "lucide-react";
 import about from "@/assets/about.jpg";
+import leaderDivya from "@/assets/leader-divya.jpg";
+import leaderDileep from "@/assets/leader-dileep.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
