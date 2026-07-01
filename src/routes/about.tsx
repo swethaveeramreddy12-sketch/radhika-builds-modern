@@ -103,7 +103,7 @@ function About() {
               </div>
             </div>
             <div className="bg-card p-8 rounded-lg border border-border shadow-card flex flex-col sm:flex-row gap-6 items-start">
-              <img src="/src/assets/leader-dileep.jpg" alt="Reddivary Dileep Kumar" className="w-28 h-28 rounded-full object-cover shrink-0 border-2 border-navy/10" />
+              <img src={leaderDileep} alt="Reddivary Dileep Kumar" width={112} height={112} loading="lazy" className="w-28 h-28 rounded-full object-cover shrink-0 border-2 border-navy/10" />
               <div>
                 <h3 className="text-xl font-semibold">Reddivary Dileep Kumar</h3>
                 <p className="text-navy text-sm font-medium mb-3">Senior Engineer & CFO</p>
