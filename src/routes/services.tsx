@@ -6,11 +6,13 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Radhika Constructions" },
-      { name: "description", content: "Residential, commercial, infrastructure, industrial, interior fit-out and project management services." },
-      { property: "og:title", content: "Services — Radhika Constructions" },
-      { property: "og:description", content: "A full-spectrum construction partner." },
+      { title: "Construction Services in Madanapalle — Radhika Constructions" },
+      { name: "description", content: "Residential construction, commercial buildings, industrial projects, renovation, interior fit-out, MEP and project management services in Madanapalle and across Andhra Pradesh." },
+      { property: "og:title", content: "Construction Services — Radhika Constructions" },
+      { property: "og:description", content: "Full-spectrum construction services in Madanapalle and Andhra Pradesh." },
+      { property: "og:url", content: "https://radhika-builds-modern.lovable.app/services" },
     ],
+    links: [{ rel: "canonical", href: "https://radhika-builds-modern.lovable.app/services" }],
   }),
   component: Services,
 });
