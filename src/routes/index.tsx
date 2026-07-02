@@ -8,11 +8,13 @@ import { services, projects, testimonials, stats } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Radhika Constructions — Building Landmarks Since 1998" },
-      { name: "description", content: "Premium construction company delivering residential, commercial and infrastructure projects with precision and craftsmanship." },
-      { property: "og:title", content: "Radhika Constructions — Building Landmarks Since 1998" },
-      { property: "og:description", content: "Premium construction company delivering landmark projects across India." },
+      { title: "Radhika Constructions — Builders & Contractors in Madanapalle, Andhra Pradesh" },
+      { name: "description", content: "Radhika Constructions is a trusted construction company in Madanapalle building premium homes, commercial spaces, and infrastructure across Andhra Pradesh since 1998." },
+      { property: "og:title", content: "Radhika Constructions — Builders & Contractors in Madanapalle" },
+      { property: "og:description", content: "Premium residential, commercial and infrastructure construction across Andhra Pradesh since 1998." },
+      { property: "og:url", content: "https://radhika-builds-modern.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://radhika-builds-modern.lovable.app/" }],
   }),
   component: Home,
 });

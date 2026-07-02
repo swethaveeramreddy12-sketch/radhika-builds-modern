@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://radhika-builds-modern.lovable.app/sitemap.xml

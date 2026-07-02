@@ -14,18 +14,13 @@ import about from "@/assets/about.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Radhika Constructions" },
-      {
-        name: "description",
-        content:
-          "Three decades of disciplined construction craft. Meet the team and values behind Radhika Constructions.",
-      },
+      { title: "About Radhika Constructions — Trusted Builders in Andhra Pradesh" },
+      { name: "description", content: "Meet the leadership and values behind Radhika Constructions — a Madanapalle-based construction company delivering quality residential, commercial and infrastructure projects since 1998." },
       { property: "og:title", content: "About Radhika Constructions" },
-      {
-        property: "og:description",
-        content: "Three decades of disciplined construction craft.",
-      },
+      { property: "og:description", content: "Leadership, values and the craft behind Radhika Constructions in Madanapalle, Andhra Pradesh." },
+      { property: "og:url", content: "https://radhika-builds-modern.lovable.app/about" },
     ],
+    links: [{ rel: "canonical", href: "https://radhika-builds-modern.lovable.app/about" }],
   }),
   component: About,
 });

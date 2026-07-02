@@ -8,11 +8,13 @@ import heroImg from "@/assets/hero-construction.jpg";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Radhika Constructions" },
-      { name: "description", content: "Explore Radhika Constructions' running and completed projects across residential, commercial, industrial and infrastructure segments." },
+      { title: "Our Projects — Radhika Constructions, Madanapalle" },
+      { name: "description", content: "Running and completed residential, commercial, industrial and infrastructure projects by Radhika Constructions across Andhra Pradesh." },
       { property: "og:title", content: "Projects — Radhika Constructions" },
-      { property: "og:description", content: "Running and completed landmark projects by Radhika Constructions." },
+      { property: "og:description", content: "Landmark residential, commercial and infrastructure projects by Radhika Constructions." },
+      { property: "og:url", content: "https://radhika-builds-modern.lovable.app/projects" },
     ],
+    links: [{ rel: "canonical", href: "https://radhika-builds-modern.lovable.app/projects" }],
   }),
   component: Projects,
 });

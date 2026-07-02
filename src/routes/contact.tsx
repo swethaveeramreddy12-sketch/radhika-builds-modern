@@ -9,11 +9,13 @@ const COMPANY_WHATSAPP = "919642333337";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Radhika Constructions" },
-      { name: "description", content: "Get in touch with Radhika Constructions to start your next residential, commercial or infrastructure project." },
+      { title: "Contact Radhika Constructions — Builders in Madanapalle, AP" },
+      { name: "description", content: "Contact Radhika Constructions at Nimmanapalli Circle, Madanapalle, Andhra Pradesh 517501. Call +91 96423 33337 or email radhikaconstructions@gmail.com for a free quote." },
       { property: "og:title", content: "Contact Radhika Constructions" },
-      { property: "og:description", content: "Start a conversation about your next project." },
+      { property: "og:description", content: "Call +91 96423 33337 or visit us at Nimmanapalli Circle, Madanapalle, Andhra Pradesh." },
+      { property: "og:url", content: "https://radhika-builds-modern.lovable.app/contact" },
     ],
+    links: [{ rel: "canonical", href: "https://radhika-builds-modern.lovable.app/contact" }],
   }),
   component: Contact,
 });
