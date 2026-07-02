@@ -4,6 +4,8 @@ import { Building2, ConstructionIcon, Users, UserCheck, MapPin, Calendar, Shield
 import { Layout } from "@/components/Layout";
 import { projects } from "@/lib/site-data";
 import heroImg from "@/assets/hero-construction.jpg";
+import businessHubImg from "@/assets/project-business-hub.jpg";
+import eliteVillasImg from "@/assets/project-elite-villas.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -21,8 +23,8 @@ export const Route = createFileRoute("/projects")({
 
 const runningProjects = [
   { title: "Radhika Skyline Apartments", location: "Gachibowli, Hyderabad", progress: 65, eta: "Dec 2025", img: heroImg },
-  { title: "Radhika Business Hub", location: "Financial District, Hyderabad", progress: 40, eta: "Aug 2025", img: heroImg },
-  { title: "Radhika Elite Villas", location: "Kokapet, Hyderabad", progress: 70, eta: "Feb 2026", img: heroImg },
+  { title: "Radhika Business Hub", location: "Financial District, Hyderabad", progress: 40, eta: "Aug 2025", img: businessHubImg },
+  { title: "Radhika Elite Villas", location: "Kokapet, Hyderabad", progress: 70, eta: "Feb 2026", img: eliteVillasImg },
 ];
 
 const completedCategories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure"] as const;
