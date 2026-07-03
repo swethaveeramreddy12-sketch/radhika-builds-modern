@@ -36,6 +36,8 @@ const completedProjects = [
   { title: "Radhika Industrial Complex", location: "Patancheru, Hyderabad", category: "Industrial", year: "2021", img: projects[5].img },
   { title: "Crescent Mall", location: "Pune", category: "Commercial", year: "2020", img: projects[3].img },
   { title: "Coastal Expressway Bridge", location: "Chennai", category: "Infrastructure", year: "2019", img: projects[4].img },
+  { title: "Radhika Corporate Interiors", location: "Gachibowli, Hyderabad", category: "Structural and Interiors", year: "2022", img: projects[1].img },
+  { title: "Radhika Villa Interiors", location: "Jubilee Hills, Hyderabad", category: "Structural and Interiors", year: "2023", img: projects[2].img },
 ];
 
 const stats = [
