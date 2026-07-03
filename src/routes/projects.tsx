@@ -22,12 +22,12 @@ export const Route = createFileRoute("/projects")({
 });
 
 const runningProjects = [
-  { title: "Radhika Skyline Apartments", location: "Gachibowli, Hyderabad", progress: 65, eta: "Dec 2025", img: heroImg },
-  { title: "Radhika Business Hub", location: "Financial District, Hyderabad", progress: 40, eta: "Aug 2025", img: businessHubImg },
-  { title: "Radhika Elite Villas", location: "Kokapet, Hyderabad", progress: 70, eta: "Feb 2026", img: eliteVillasImg },
+  { title: "Radhika Skyline Apartments", location: "Gachibowli, Hyderabad", progress: 65, eta: "2028", img: heroImg },
+  { title: "Radhika Business Hub", location: "Vijayawada", progress: 40, eta: "2028", img: businessHubImg },
+  { title: "Radhika Elite Villas", location: "Chennai", progress: 70, eta: "2028", img: eliteVillasImg },
 ];
 
-const completedCategories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure"] as const;
+const completedCategories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure", "Structural and Interiors"] as const;
 
 const completedProjects = [
   { title: "Radhika Heights", location: "Manikonda, Hyderabad", category: "Residential", year: "2023", img: projects[0].img },
@@ -36,6 +36,8 @@ const completedProjects = [
   { title: "Radhika Industrial Complex", location: "Patancheru, Hyderabad", category: "Industrial", year: "2021", img: projects[5].img },
   { title: "Crescent Mall", location: "Pune", category: "Commercial", year: "2020", img: projects[3].img },
   { title: "Coastal Expressway Bridge", location: "Chennai", category: "Infrastructure", year: "2019", img: projects[4].img },
+  { title: "Radhika Corporate Interiors", location: "Gachibowli, Hyderabad", category: "Structural and Interiors", year: "2022", img: projects[1].img },
+  { title: "Radhika Villa Interiors", location: "Jubilee Hills, Hyderabad", category: "Structural and Interiors", year: "2023", img: projects[2].img },
 ];
 
 const stats = [
