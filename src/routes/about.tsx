@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 import about from "@/assets/about.jpg";
+import divyaImg from "@/assets/leader-divya-new.jpg";
+import dileepImg from "@/assets/leader-dileep-new.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -197,9 +199,13 @@ function About() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Divya Card */}
-            <div className="relative bg-card rounded-xl border border-border p-8 shadow-card overflow-hidden">
-              <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
-              <div className="flex-1">
+            <div className="relative bg-card rounded-xl border border-border shadow-card overflow-hidden flex flex-col">
+              <img
+                src={divyaImg}
+                alt="Reddivary Divya — Managing Partner"
+                className="w-full h-72 object-cover object-top"
+              />
+              <div className="p-8 flex-1">
                 <h3 className="text-xl font-semibold text-navy mb-1">
                   Reddivary Divya
                 </h3>
@@ -220,12 +226,17 @@ function About() {
                   <Linkedin className="w-4 h-4" />
                 </a>
               </div>
+              <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
             </div>
 
             {/* Dileep Card */}
-            <div className="relative bg-card rounded-xl border border-border p-8 shadow-card overflow-hidden">
-              <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
-              <div className="flex-1">
+            <div className="relative bg-card rounded-xl border border-border shadow-card overflow-hidden flex flex-col">
+              <img
+                src={dileepImg}
+                alt="Reddivary Dileep Kumar — Senior Engineer & CFO"
+                className="w-full h-72 object-cover object-top"
+              />
+              <div className="p-8 flex-1">
                 <h3 className="text-xl font-semibold text-navy mb-1">
                   Reddivary Dileep Kumar
                 </h3>
@@ -246,6 +257,7 @@ function About() {
                   <Linkedin className="w-4 h-4" />
                 </a>
               </div>
+              <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
             </div>
           </div>
         </div>
