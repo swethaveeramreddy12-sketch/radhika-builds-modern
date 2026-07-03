@@ -22,9 +22,9 @@ export const Route = createFileRoute("/projects")({
 });
 
 const runningProjects = [
-  { title: "Radhika Skyline Apartments", location: "Gachibowli, Hyderabad", progress: 65, eta: "Dec 2025", img: heroImg },
-  { title: "Radhika Business Hub", location: "Financial District, Hyderabad", progress: 40, eta: "Aug 2025", img: businessHubImg },
-  { title: "Radhika Elite Villas", location: "Kokapet, Hyderabad", progress: 70, eta: "Feb 2026", img: eliteVillasImg },
+  { title: "Radhika Skyline Apartments", location: "Gachibowli, Hyderabad", progress: 65, eta: "2028", img: heroImg },
+  { title: "Radhika Business Hub", location: "Vijayawada", progress: 40, eta: "2028", img: businessHubImg },
+  { title: "Radhika Elite Villas", location: "Chennai", progress: 70, eta: "2028", img: eliteVillasImg },
 ];
 
 const completedCategories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure"] as const;
