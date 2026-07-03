@@ -27,7 +27,7 @@ const runningProjects = [
   { title: "Radhika Elite Villas", location: "Chennai", progress: 70, eta: "2028", img: eliteVillasImg },
 ];
 
-const completedCategories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure"] as const;
+const completedCategories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure", "Structural and Interiors"] as const;
 
 const completedProjects = [
   { title: "Radhika Heights", location: "Manikonda, Hyderabad", category: "Residential", year: "2023", img: projects[0].img },
