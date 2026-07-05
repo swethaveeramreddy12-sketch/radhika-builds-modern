@@ -196,57 +196,57 @@ function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Divya Card */}
-            <div className="relative bg-card rounded-xl border border-border shadow-card overflow-hidden">
-              <div className="p-8">
-                <h3 className="text-xl font-semibold text-navy mb-1">
-                  Reddivary Divya
-                </h3>
-                <p className="text-gold text-sm font-medium mb-3 inline-block relative">
-                  Managing Partner
-                  <span className="absolute left-0 -bottom-1 w-10 h-[2px] bg-gold rounded-full" />
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                  With a strong vision and strategic leadership, Divya drives the
-                  company forward, ensuring quality, integrity, and client
-                  satisfaction in every project.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center w-9 h-9 rounded border border-border text-muted-foreground hover:text-navy hover:border-navy/30 transition-smooth"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
+            <div className="group p-8 bg-card border border-border rounded-lg hover:bg-navy hover:text-white transition-smooth">
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-md bg-navy text-white flex items-center justify-center group-hover:bg-[var(--gold)] group-hover:text-navy-deep transition-smooth">
+                  <User className="w-5 h-5" />
+                </div>
               </div>
-              <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
+              <h3 className="text-xl font-semibold mb-1">Reddivary Divya</h3>
+              <p className="text-gold text-sm font-medium mb-3 inline-block relative">
+                Managing Partner
+                <span className="absolute left-0 -bottom-1 w-10 h-[2px] bg-gold rounded-full" />
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground group-hover:text-white/80 mb-5">
+                With a strong vision and strategic leadership, Divya drives the
+                company forward, ensuring quality, integrity, and client
+                satisfaction in every project.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center w-9 h-9 rounded border border-border text-muted-foreground hover:text-navy hover:border-navy/30 group-hover:border-white/30 group-hover:text-white transition-smooth"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
             </div>
 
             {/* Dileep Card */}
-            <div className="relative bg-card rounded-xl border border-border shadow-card overflow-hidden">
-              <div className="p-8">
-                <h3 className="text-xl font-semibold text-navy mb-1">
-                  Reddivary Dileep Kumar
-                </h3>
-                <p className="text-gold text-sm font-medium mb-3 inline-block relative">
-                  Senior Engineer & CFO
-                  <span className="absolute left-0 -bottom-1 w-10 h-[2px] bg-gold rounded-full" />
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                  Dileep combines engineering expertise with financial acumen,
-                  overseeing project execution and company financial strategy with
-                  precision and transparency.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center w-9 h-9 rounded border border-border text-muted-foreground hover:text-navy hover:border-navy/30 transition-smooth"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
+            <div className="group p-8 bg-card border border-border rounded-lg hover:bg-navy hover:text-white transition-smooth">
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-md bg-navy text-white flex items-center justify-center group-hover:bg-[var(--gold)] group-hover:text-navy-deep transition-smooth">
+                  <User className="w-5 h-5" />
+                </div>
               </div>
-              <DotPattern className="absolute bottom-4 right-4 text-navy/10" />
+              <h3 className="text-xl font-semibold mb-1">Reddivary Dileep Kumar</h3>
+              <p className="text-gold text-sm font-medium mb-3 inline-block relative">
+                Senior Engineer & CFO
+                <span className="absolute left-0 -bottom-1 w-10 h-[2px] bg-gold rounded-full" />
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground group-hover:text-white/80 mb-5">
+                Dileep combines engineering expertise with financial acumen,
+                overseeing project execution and company financial strategy with
+                precision and transparency.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center w-9 h-9 rounded border border-border text-muted-foreground hover:text-navy hover:border-navy/30 group-hover:border-white/30 group-hover:text-white transition-smooth"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
