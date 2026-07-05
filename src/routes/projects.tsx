@@ -95,53 +95,8 @@ function Projects() {
         </div>
       </section>
 
-      {/* Running Projects */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
-            <div>
-              <p className="text-[var(--gold)] text-xs uppercase tracking-[0.25em] mb-2">Running Projects</p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-navy">Projects in Progress</h2>
-              <div className="mt-3 w-12 h-1 bg-[var(--gold)]" />
-            </div>
-            <Link to="/projects" className="text-[var(--gold)] font-medium flex items-center gap-2 hover:gap-3 transition-all">
-              View All Running Projects <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {runningProjects.map((p) => (
-              <article key={p.title} className="bg-white rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-smooth">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
-                  <span className="absolute top-3 right-3 bg-[var(--gold)] text-navy-deep text-xs font-semibold px-3 py-1 rounded">In Progress</span>
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-navy">{p.title}</h3>
-                  <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-                    <MapPin className="w-4 h-4 text-[var(--gold)]" /> {p.location}
-                  </p>
-                  <div className="mt-4">
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-muted-foreground">Progress</span>
-                      <span className="font-semibold text-navy">{p.progress}%</span>
-                    </div>
-                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                      <div className="h-full bg-[var(--gold)] rounded-full" style={{ width: `${p.progress}%` }} />
-                    </div>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-border text-sm text-muted-foreground flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-[var(--gold)]" /> Expected Completion: {p.eta}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Completed Projects */}
-      <section className="py-16 bg-secondary/30">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
             <div>
@@ -182,6 +137,51 @@ function Projects() {
                   <span className="inline-block mt-3 text-xs font-medium px-2.5 py-1 rounded bg-[var(--gold)]/15 text-[var(--gold)]">{p.category}</span>
                   <div className="mt-3 pt-3 border-t border-border text-xs text-muted-foreground flex items-center gap-2">
                     <Calendar className="w-3.5 h-3.5 text-[var(--gold)]" /> Completed: {p.year}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Running Projects */}
+      <section className="py-16 bg-secondary/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <p className="text-[var(--gold)] text-xs uppercase tracking-[0.25em] mb-2">Running Projects</p>
+              <h2 className="text-3xl md:text-4xl font-semibold text-navy">Projects in Progress</h2>
+              <div className="mt-3 w-12 h-1 bg-[var(--gold)]" />
+            </div>
+            <Link to="/projects" className="text-[var(--gold)] font-medium flex items-center gap-2 hover:gap-3 transition-all">
+              View All Running Projects <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {runningProjects.map((p) => (
+              <article key={p.title} className="bg-white rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-smooth">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
+                  <span className="absolute top-3 right-3 bg-[var(--gold)] text-navy-deep text-xs font-semibold px-3 py-1 rounded">In Progress</span>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold text-navy">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
+                    <MapPin className="w-4 h-4 text-[var(--gold)]" /> {p.location}
+                  </p>
+                  <div className="mt-4">
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-muted-foreground">Progress</span>
+                      <span className="font-semibold text-navy">{p.progress}%</span>
+                    </div>
+                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                      <div className="h-full bg-[var(--gold)] rounded-full" style={{ width: `${p.progress}%` }} />
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border text-sm text-muted-foreground flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-[var(--gold)]" /> Expected Completion: {p.eta}
                   </div>
                 </div>
               </article>
