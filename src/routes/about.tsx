@@ -7,6 +7,7 @@ import {
   Users,
   Star,
   Linkedin,
+  User,
 } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 import about from "@/assets/about.jpg";
