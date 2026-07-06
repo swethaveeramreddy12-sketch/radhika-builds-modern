@@ -1,11 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Building2, ConstructionIcon, Users, UserCheck, MapPin, Calendar, ShieldCheck, HardHat, Handshake, Settings, ArrowRight, Ruler } from "lucide-react";
+import { Building2, ConstructionIcon, Users, UserCheck, MapPin, Calendar, ShieldCheck, HardHat, Handshake, Settings, ArrowRight, Ruler, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { projects } from "@/lib/site-data";
 import heroImg from "@/assets/hero-construction.jpg";
 import businessHubImg from "@/assets/project-business-hub.jpg";
 import eliteVillasImg from "@/assets/project-elite-villas.jpg";
+import interiorLuxury from "@/assets/interior-luxury.jpg";
+import interiorOffice from "@/assets/interior-office.jpg";
+import interiorVilla from "@/assets/interior-villa.jpg";
+import interiorRetail from "@/assets/interior-retail.jpg";
+import interiorIndustrial from "@/assets/interior-industrial.jpg";
+import interiorDesign from "@/assets/interior-design.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -30,14 +36,14 @@ const runningProjects = [
 const completedCategories = ["All", "Residential", "Commercial", "Industrial", "Architectural Designs", "Structural and Interiors"] as const;
 
 const completedProjects = [
-  { title: "Radhika Heights", location: "Manikonda, Hyderabad", category: "Residential", year: "2023", img: projects[0].img },
-  { title: "Radhika Tech Park", location: "Hitec City, Hyderabad", category: "Commercial", year: "2022", img: projects[1].img },
-  { title: "Radhika Green Villas", location: "Mokila, Hyderabad", category: "Residential", year: "2023", img: projects[2].img },
-  { title: "Radhika Industrial Complex", location: "Patancheru, Hyderabad", category: "Industrial", year: "2021", img: projects[5].img },
-  { title: "Crescent Mall", location: "Pune", category: "Commercial", year: "2020", img: projects[3].img },
-  { title: "Radhika Design Centre", location: "Banjara Hills, Hyderabad", category: "Architectural Designs", year: "2022", img: heroImg },
-  { title: "Radhika Corporate Interiors", location: "Gachibowli, Hyderabad", category: "Structural and Interiors", year: "2022", img: projects[1].img },
-  { title: "Radhika Villa Interiors", location: "Jubilee Hills, Hyderabad", category: "Structural and Interiors", year: "2023", img: projects[2].img },
+  { title: "Radhika Heights", location: "Manikonda, Hyderabad", category: "Residential", year: "2023", img: projects[0].img, interiorImages: [interiorLuxury, interiorVilla] },
+  { title: "Radhika Tech Park", location: "Hitec City, Hyderabad", category: "Commercial", year: "2022", img: projects[1].img, interiorImages: [interiorOffice, interiorDesign] },
+  { title: "Radhika Green Villas", location: "Mokila, Hyderabad", category: "Residential", year: "2023", img: projects[2].img, interiorImages: [interiorVilla, interiorLuxury] },
+  { title: "Radhika Industrial Complex", location: "Patancheru, Hyderabad", category: "Industrial", year: "2021", img: projects[5].img, interiorImages: [interiorIndustrial, interiorOffice] },
+  { title: "Crescent Mall", location: "Pune", category: "Commercial", year: "2020", img: projects[3].img, interiorImages: [interiorRetail, interiorLuxury] },
+  { title: "Radhika Design Centre", location: "Banjara Hills, Hyderabad", category: "Architectural Designs", year: "2022", img: heroImg, interiorImages: [interiorDesign, interiorOffice] },
+  { title: "Radhika Corporate Interiors", location: "Gachibowli, Hyderabad", category: "Structural and Interiors", year: "2022", img: projects[1].img, interiorImages: [interiorOffice, interiorLuxury] },
+  { title: "Radhika Villa Interiors", location: "Jubilee Hills, Hyderabad", category: "Structural and Interiors", year: "2023", img: projects[2].img, interiorImages: [interiorVilla, interiorLuxury] },
 ];
 
 const stats = [
@@ -56,7 +62,29 @@ const features = [
 
 function Projects() {
   const [active, setActive] = useState<(typeof completedCategories)[number]>("All");
+  const [selectedProject, setSelectedProject] = useState<typeof completedProjects[number] | null>(null);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const filtered = active === "All" ? completedProjects : completedProjects.filter((p) => p.category === active);
+
+  const openGallery = (project: typeof completedProjects[number]) => {
+    setSelectedProject(project);
+    setCurrentPhotoIndex(0);
+  };
+
+  const closeGallery = () => {
+    setSelectedProject(null);
+    setCurrentPhotoIndex(0);
+  };
+
+  const nextPhoto = () => {
+    if (!selectedProject) return;
+    setCurrentPhotoIndex((prev) => (prev + 1) % selectedProject.interiorImages.length);
+  };
+
+  const prevPhoto = () => {
+    if (!selectedProject) return;
+    setCurrentPhotoIndex((prev) => (prev - 1 + selectedProject.interiorImages.length) % selectedProject.interiorImages.length);
+  };
 
   return (
     <Layout>
@@ -125,9 +153,18 @@ function Projects() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filtered.map((p) => (
-              <article key={p.title} className="bg-white rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-smooth">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" />
+              <article
+                key={p.title}
+                onClick={() => openGallery(p)}
+                className="bg-white rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-smooth cursor-pointer group"
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-smooth duration-700" />
+                  <div className="absolute inset-0 bg-navy-deep/0 group-hover:bg-navy-deep/40 transition-smooth flex items-center justify-center">
+                    <span className="text-white font-medium px-4 py-2 rounded-md border border-white/30 bg-white/10 opacity-0 group-hover:opacity-100 transition-smooth text-sm">
+                      View Interior Photos
+                    </span>
+                  </div>
                 </div>
                 <div className="p-5">
                   <h3 className="text-base font-semibold text-navy">{p.title}</h3>
@@ -229,6 +266,69 @@ function Projects() {
           </div>
         </div>
       </section>
+
+      {/* Interior Photos Gallery Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center" onClick={closeGallery}>
+          <div className="absolute inset-0 bg-black/80" />
+          <div className="relative z-10 w-full max-w-4xl mx-4" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-white rounded-xl overflow-hidden shadow-2xl">
+              <div className="flex items-center justify-between p-4 border-b border-border">
+                <div>
+                  <h3 className="font-semibold text-navy">{selectedProject.title}</h3>
+                  <p className="text-sm text-muted-foreground">{selectedProject.location}</p>
+                </div>
+                <button
+                  onClick={closeGallery}
+                  className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:bg-border transition-smooth"
+                  aria-label="Close gallery"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <div className="relative bg-navy-deep">
+                <img
+                  src={selectedProject.interiorImages[currentPhotoIndex]}
+                  alt={`${selectedProject.title} interior ${currentPhotoIndex + 1}`}
+                  className="w-full h-64 sm:h-96 object-cover"
+                  width={1024}
+                  height={768}
+                />
+                {selectedProject.interiorImages.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevPhoto}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-smooth shadow-lg"
+                      aria-label="Previous photo"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-navy" />
+                    </button>
+                    <button
+                      onClick={nextPhoto}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-smooth shadow-lg"
+                      aria-label="Next photo"
+                    >
+                      <ChevronRight className="w-5 h-5 text-navy" />
+                    </button>
+                  </>
+                )}
+              </div>
+              <div className="p-4 flex items-center justify-center gap-2">
+                {selectedProject.interiorImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentPhotoIndex(idx)}
+                    className={`w-2.5 h-2.5 rounded-full transition-smooth ${
+                      idx === currentPhotoIndex ? "bg-[var(--gold)]" : "bg-border hover:bg-muted-foreground"
+                    }`}
+                    aria-label={`Go to photo ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }
