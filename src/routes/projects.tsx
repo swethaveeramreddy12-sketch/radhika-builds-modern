@@ -266,6 +266,69 @@ function Projects() {
           </div>
         </div>
       </section>
+
+      {/* Interior Photos Gallery Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center" onClick={closeGallery}>
+          <div className="absolute inset-0 bg-black/80" />
+          <div className="relative z-10 w-full max-w-4xl mx-4" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-white rounded-xl overflow-hidden shadow-2xl">
+              <div className="flex items-center justify-between p-4 border-b border-border">
+                <div>
+                  <h3 className="font-semibold text-navy">{selectedProject.title}</h3>
+                  <p className="text-sm text-muted-foreground">{selectedProject.location}</p>
+                </div>
+                <button
+                  onClick={closeGallery}
+                  className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:bg-border transition-smooth"
+                  aria-label="Close gallery"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <div className="relative bg-navy-deep">
+                <img
+                  src={selectedProject.interiorImages[currentPhotoIndex]}
+                  alt={`${selectedProject.title} interior ${currentPhotoIndex + 1}`}
+                  className="w-full h-64 sm:h-96 object-cover"
+                  width={1024}
+                  height={768}
+                />
+                {selectedProject.interiorImages.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevPhoto}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-smooth shadow-lg"
+                      aria-label="Previous photo"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-navy" />
+                    </button>
+                    <button
+                      onClick={nextPhoto}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-smooth shadow-lg"
+                      aria-label="Next photo"
+                    >
+                      <ChevronRight className="w-5 h-5 text-navy" />
+                    </button>
+                  </>
+                )}
+              </div>
+              <div className="p-4 flex items-center justify-center gap-2">
+                {selectedProject.interiorImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentPhotoIndex(idx)}
+                    className={`w-2.5 h-2.5 rounded-full transition-smooth ${
+                      idx === currentPhotoIndex ? "bg-[var(--gold)]" : "bg-border hover:bg-muted-foreground"
+                    }`}
+                    aria-label={`Go to photo ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }
