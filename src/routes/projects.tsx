@@ -43,7 +43,6 @@ const completedProjects = [
   { title: "Crescent Mall", location: "Pune", category: "Commercial", year: "2020", img: projects[3].img, interiorImages: [interiorRetail, interiorLuxury] },
   { title: "Radhika Design Centre", location: "Banjara Hills, Hyderabad", category: "Architectural Designs", year: "2022", img: heroImg, interiorImages: [interiorDesign, interiorOffice] },
   { title: "Radhika Corporate Interiors", location: "Gachibowli, Hyderabad", category: "Structural and Interiors", year: "2022", img: projects[1].img, interiorImages: [interiorOffice, interiorLuxury] },
-  { title: "Radhika Villa Interiors", location: "Jubilee Hills, Hyderabad", category: "Structural and Interiors", year: "2023", img: projects[2].img, interiorImages: [interiorVilla, interiorLuxury] },
 ];
 
 const stats = [
