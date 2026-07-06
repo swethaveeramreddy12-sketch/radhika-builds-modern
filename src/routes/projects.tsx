@@ -153,9 +153,18 @@ function Projects() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filtered.map((p) => (
-              <article key={p.title} className="bg-white rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-smooth">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" />
+              <article
+                key={p.title}
+                onClick={() => openGallery(p)}
+                className="bg-white rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-smooth cursor-pointer group"
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-smooth duration-700" />
+                  <div className="absolute inset-0 bg-navy-deep/0 group-hover:bg-navy-deep/40 transition-smooth flex items-center justify-center">
+                    <span className="text-white font-medium px-4 py-2 rounded-md border border-white/30 bg-white/10 opacity-0 group-hover:opacity-100 transition-smooth text-sm">
+                      View Interior Photos
+                    </span>
+                  </div>
                 </div>
                 <div className="p-5">
                   <h3 className="text-base font-semibold text-navy">{p.title}</h3>
