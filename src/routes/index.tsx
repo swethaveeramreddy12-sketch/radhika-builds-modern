@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, Building2, CheckCircle2, Quote } from "lucide-react";
+import { ArrowRight, Award, Building2, CheckCircle2, Linkedin, Quote, User } from "lucide-react";
 import hero from "@/assets/hero-construction.jpg";
 import about from "@/assets/about.jpg";
 import { Layout } from "@/components/Layout";
