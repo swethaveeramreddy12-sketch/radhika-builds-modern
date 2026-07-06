@@ -62,7 +62,29 @@ const features = [
 
 function Projects() {
   const [active, setActive] = useState<(typeof completedCategories)[number]>("All");
+  const [selectedProject, setSelectedProject] = useState<typeof completedProjects[number] | null>(null);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const filtered = active === "All" ? completedProjects : completedProjects.filter((p) => p.category === active);
+
+  const openGallery = (project: typeof completedProjects[number]) => {
+    setSelectedProject(project);
+    setCurrentPhotoIndex(0);
+  };
+
+  const closeGallery = () => {
+    setSelectedProject(null);
+    setCurrentPhotoIndex(0);
+  };
+
+  const nextPhoto = () => {
+    if (!selectedProject) return;
+    setCurrentPhotoIndex((prev) => (prev + 1) % selectedProject.interiorImages.length);
+  };
+
+  const prevPhoto = () => {
+    if (!selectedProject) return;
+    setCurrentPhotoIndex((prev) => (prev - 1 + selectedProject.interiorImages.length) % selectedProject.interiorImages.length);
+  };
 
   return (
     <Layout>
