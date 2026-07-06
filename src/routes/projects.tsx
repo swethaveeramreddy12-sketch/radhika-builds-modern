@@ -1,11 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Building2, ConstructionIcon, Users, UserCheck, MapPin, Calendar, ShieldCheck, HardHat, Handshake, Settings, ArrowRight, Ruler } from "lucide-react";
+import { Building2, ConstructionIcon, Users, UserCheck, MapPin, Calendar, ShieldCheck, HardHat, Handshake, Settings, ArrowRight, Ruler, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { projects } from "@/lib/site-data";
 import heroImg from "@/assets/hero-construction.jpg";
 import businessHubImg from "@/assets/project-business-hub.jpg";
 import eliteVillasImg from "@/assets/project-elite-villas.jpg";
+import interiorLuxury from "@/assets/interior-luxury.jpg";
+import interiorOffice from "@/assets/interior-office.jpg";
+import interiorVilla from "@/assets/interior-villa.jpg";
+import interiorRetail from "@/assets/interior-retail.jpg";
+import interiorIndustrial from "@/assets/interior-industrial.jpg";
+import interiorDesign from "@/assets/interior-design.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
