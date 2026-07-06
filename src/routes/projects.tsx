@@ -40,10 +40,8 @@ const completedProjects = [
   { title: "Radhika Tech Park", location: "Hitec City, Hyderabad", category: "Commercial", year: "2022", img: projects[1].img, interiorImages: [interiorOffice, interiorDesign] },
   { title: "Radhika Green Villas", location: "Mokila, Hyderabad", category: "Residential", year: "2023", img: projects[2].img, interiorImages: [interiorVilla, interiorLuxury] },
   { title: "Radhika Industrial Complex", location: "Patancheru, Hyderabad", category: "Industrial", year: "2021", img: projects[5].img, interiorImages: [interiorIndustrial, interiorOffice] },
-  { title: "Crescent Mall", location: "Pune", category: "Commercial", year: "2020", img: projects[3].img, interiorImages: [interiorRetail, interiorLuxury] },
   { title: "Radhika Design Centre", location: "Banjara Hills, Hyderabad", category: "Architectural Designs", year: "2022", img: heroImg, interiorImages: [interiorDesign, interiorOffice] },
   { title: "Radhika Corporate Interiors", location: "Gachibowli, Hyderabad", category: "Structural and Interiors", year: "2022", img: projects[1].img, interiorImages: [interiorOffice, interiorLuxury] },
-  { title: "Radhika Villa Interiors", location: "Jubilee Hills, Hyderabad", category: "Structural and Interiors", year: "2023", img: projects[2].img, interiorImages: [interiorVilla, interiorLuxury] },
 ];
 
 const stats = [
