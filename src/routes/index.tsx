@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, Building2, CheckCircle2, Quote } from "lucide-react";
+import { ArrowRight, Award, Building2, CheckCircle2, Linkedin, Quote, User } from "lucide-react";
 import hero from "@/assets/hero-construction.jpg";
 import about from "@/assets/about.jpg";
 import { Layout } from "@/components/Layout";
@@ -93,6 +93,84 @@ function Home() {
             <Link to="/about" className="inline-flex items-center gap-2 text-navy font-semibold hover:gap-3 transition-all">
               Learn our story <ArrowRight className="w-4 h-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* LEADERSHIP */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-gold text-xs font-semibold uppercase tracking-[0.25em] mb-4">
+              Our Leadership
+            </p>
+            <h2 className="text-4xl md:text-[2.6rem] font-semibold text-navy mb-4">
+              Guided by Vision. Driven by Values.
+            </h2>
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="w-12 h-[2px] bg-gold/40 rounded-full" />
+              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <span className="w-12 h-[2px] bg-gold/40 rounded-full" />
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              With a shared commitment to quality, integrity, and innovation, our
+              leaders drive Radhika Constructions towards consistent growth and
+              excellence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Divya Card */}
+            <div className="group p-8 bg-card border border-border rounded-lg hover:bg-navy hover:text-white transition-smooth">
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-md bg-navy text-white flex items-center justify-center group-hover:bg-[var(--gold)] group-hover:text-navy-deep transition-smooth">
+                  <User className="w-5 h-5" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-1">Reddivary Divya</h3>
+              <p className="text-gold text-sm font-medium mb-3 inline-block relative">
+                Managing Partner
+                <span className="absolute left-0 -bottom-1 w-10 h-[2px] bg-gold rounded-full" />
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground group-hover:text-white/80 mb-5">
+                With a strong vision and strategic leadership, Divya drives the
+                company forward, ensuring quality, integrity, and client
+                satisfaction in every project.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center w-9 h-9 rounded border border-border text-muted-foreground hover:text-navy hover:border-navy/30 group-hover:border-white/30 group-hover:text-white transition-smooth"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Dileep Card */}
+            <div className="group p-8 bg-card border border-border rounded-lg hover:bg-navy hover:text-white transition-smooth">
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-md bg-navy text-white flex items-center justify-center group-hover:bg-[var(--gold)] group-hover:text-navy-deep transition-smooth">
+                  <User className="w-5 h-5" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-1">Reddivary Dileep Kumar</h3>
+              <p className="text-gold text-sm font-medium mb-3 inline-block relative">
+                Senior Engineer & CFO
+                <span className="absolute left-0 -bottom-1 w-10 h-[2px] bg-gold rounded-full" />
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground group-hover:text-white/80 mb-5">
+                Dileep combines engineering expertise with financial acumen,
+                overseeing project execution and company financial strategy with
+                precision and transparency.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center w-9 h-9 rounded border border-border text-muted-foreground hover:text-navy hover:border-navy/30 group-hover:border-white/30 group-hover:text-white transition-smooth"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
